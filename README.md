@@ -73,21 +73,21 @@
 
      等待数分钟后（会比较久），会在当前目录下创建一个名为`vis`的文件夹。
 
-     ![1561540375095](C:\Users\Jackie\repositories\SummerCourse2019\assets\1561540375095.png)
+     ![1561540375095](.\assets\1561540375095.png)
 
      `cd vis`
 
      进入文件夹后，会发现会有很多文件生成，其中`src`文件夹内存放了代码。
 
-     ![1561540407396](C:\Users\Jackie\repositories\SummerCourse2019\assets\1561540407396.png)
+     ![1561540407396](.\assets\1561540407396.png)
 
      `npm start`
 
      启动项目，会在浏览器中自动打开项目，当你看到如下界面时，说明成功：
 
-     ![1561540528363](C:\Users\Jackie\repositories\SummerCourse2019\assets\1561540528363.png)
+     ![1561540528363](.\assets\1561540528363.png)
 
-     ![1561540486764](C:\Users\Jackie\repositories\SummerCourse2019\assets\1561540486764.png)
+     ![1561540486764](.\assets\1561540486764.png)
 
    - 安装必要的组件
 
@@ -119,7 +119,6 @@
 
    - 开始开发
 
-     
 
 ### 课程大作业要求（临时）
 
