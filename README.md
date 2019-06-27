@@ -2,35 +2,57 @@
 
 ## 作业要求
 
-1. 实现Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration的可视化界面，实现下图中A B D部分，并完成如下功能（共60分）：
+> 重要：作业分100分，但只占总成绩的70%，剩下的30%，出勤和态度占10%，现场答辩占20%
+
+1. 实现Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration的可视化界面，实现下图中A B D部分，并完成如下功能（共80分）：
 
    ![interface](./assets/interface.png)
 
-   - 将动态图投影到A面板内
-   - 点击A面板内的某个点，可以在B中展示这个点对应的一个图结构
-   - 能够在D中展示上面选中的图结构的度（degree）分布
+   - 将动态图投影到A面板内（20分）
+   - 点击A面板内的某个点，可以在B中展示这个点对应的一个图结构（20分）
+   - 能够在D中展示上面选中的图结构的度（degree）分布（20分）
      - 度（degree）的概念，如果一个节点连着N条边，那么这个节点的度就是N
-   - 完成上述功能得50分
-     - 加入颜色编码，得5分
-     - B视图中，网络中的边的粗细能根据其权重进行变化，得5分
+   - 完成上述功能得60分，剩下20分
+     - 加入颜色编码，得5分（包括A图中，使用时间信息来编码；B图中用班级信息来编码）
+     - B视图中，网络中的边的粗细能根据其权重进行变化，得5分（权重越高，说明该时间段内这两个人联系越多，不要求使用曲线边，也不要求区分方向）
 
-3. 文章的数据集来源：[DATASET: High school dynamic contact networks](http://www.sociopatterns.org/datasets/high-school-dynamic-contact-networks/)，选择2012年的数据。
+   > 助教会提供一个Demo，在vis目录中，你可以进入该目录后，使用`npm i`安装依赖包，然后使用`npm start`就可以启动该Demo。你将会看到左边有一个投影好的结果，右边则是随便选出来的某一个点所对应的图结构。暂时没有任何交互，代码逻辑也很混乱，仅仅提供给你们一个参考，希望各位可以自己去根据作业指南完成作业。在此过程中，助教将不遗余力为你们提供帮助，有任何问题都可以联系助教。
 
-3. 我将会提供已经写好的python后端，以及已经计算好的数据。如果放弃自己完成算法部分，可以使用提供的python后端（[app.py](./app.py)）和计算好的[数据](./data.json)；
+   > 在这个Demo中，还包含了一份假数据，这份假数据的是json格式的。结构大概如下：
+   >
+   > ```json
+   > [{
+   >     "vector": [x, y],
+   >     "graph": {
+   >         "nodes": [{id}],
+   >         "links": [{source, target, weight}]
+   >     }
+   > }]
+   > ```
+   >
+   > 这是一个数组，数组的每个元素是一帧，一帧对应Demo左面的一个节点。这个节点的x，y坐标由vector给出，这个节点对应的图结构由graph给出。其中graph中的nodes和links最重要，分别表示图的节点，和节点之间的关联（source和target表示边连接的两个节点，weight表示边的权重）。
 
-4. 阅读[Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration](./Reducing Snapshots to Points A Visual Analytics Approach to Dynamic Network Exploration.pdf)
+2. 阅读[Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration](./Reducing Snapshots to Points A Visual Analytics Approach to Dynamic Network Exploration.pdf)（在本目录下有PDF）
 
-   理解其中的关于如何将【图】转化为【二维坐标】的算法部分，并实现该算法（推荐使用python），并接入到前端系统中
+   理解其中的关于如何将【图】转化为【二维坐标】的算法部分，并实现该算法（推荐使用python），并接入到前端系统中（不需要实现3.6中图7 b的Phyllotactic arrangement techniques）(20分)
 
-5. 【Bonus1】当然可以用其他的数据集来代替该数据，推荐数据集：
+   > 上面这个算法很简单，从文件读写，数据处理到算法生成和文件存储，大概只有150行不到的代码；推荐有能力的同学自己去尝试写一下这个算法，助教也可以提供相应的答疑；
+   >
+   > 当然，你也可以放弃这部分的分数，选择我们提供的算法和生成好的数据，可以联系助教获取；
+
+3. 文章的数据集来源：[DATASET: High school dynamic contact networks](http://www.sociopatterns.org/datasets/high-school-dynamic-contact-networks/)，选择2012年的数据；或者直接使用这里提供的[thiers_20912.csv](./thiers_20912.csv)。
+
+4. 【Bonus1】当然可以用其他的数据集来代替该数据，推荐数据集（10分）：
 
    - <http://konect.uni-koblenz.de/>
    - <http://networkrepository.com/>
    - <https://snap.stanford.edu/data/index.html>
 
-6. 【Bonus2】实现了其他附加的功能（比如系统其他两个面板，或者其他的交互手段）
+   单纯替换数据并产生结果得5分，如果能从结果中分析出insight（答辩时进行讲解）再得5分。
 
-7. 最后一天（20日）上午，我们分组进行答辩
+5. 【Bonus2】实现了其他附加的功能（比如系统其他两个面板，或者其他的交互手段）（10分）
+
+6. 最后一天（20日）上午，我们分组进行答辩
 
 
 
@@ -38,23 +60,23 @@
 
 0. 准备工作
 
-     - 编辑器：[Visual Studio Code](https://code.visualstudio.com/)（推荐，可以选择其他编辑器）
-     - 浏览器：Chrome（推荐，可以选择其他浏览器）
-     - 版本管理+协同合作工具：[Git](https://git-scm.com/downloads)+[Github](http://github.com)（推荐，但可以不用）
-     - [Node.js](https://nodejs.org/zh-cn/)，推荐安装
-     - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，不但会有内存问题，因为下载过慢，安装包已经在本项目内提供）
+      - 编辑器：[Visual Studio Code](https://code.visualstudio.com/)（推荐，可以选择其他编辑器）
+      - 浏览器：Chrome（推荐，可以选择其他浏览器）
+      - 版本管理+协同合作工具：[Git](https://git-scm.com/downloads)+[Github](http://github.com)（推荐，但可以不用）
+      - [Node.js](https://nodejs.org/zh-cn/)，推荐安装
+      - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，不但会有内存问题，因为下载过慢，安装包已经在本项目内提供）
 
-     > Windows用户在安装好Nodejs和python后，不要忘记添加环境变量哦
-     >
-     > python安装方法：https://www.runoob.com/python/python-install.html
-     >
-     > nodejs安装方法：<https://www.jianshu.com/p/2d9fa3659645>
+      > Windows用户在安装好Nodejs和python后，不要忘记添加环境变量哦
+      >
+      > python安装方法：https://www.runoob.com/python/python-install.html
+      >
+      > nodejs安装方法：<https://www.jianshu.com/p/2d9fa3659645>
 
-     > 如果你没有科学上网，那么建议你在开发前进行换源；
-     >
-     > pip换源：[Windows](https://blog.csdn.net/Artprog/article/details/75632723)，[MacOS](https://www.jianshu.com/p/f771e1120003)
-     >
-     > [npm换源](https://www.jianshu.com/p/f311a3a155ff)
+      > 如果你没有科学上网，那么建议你在开发前进行换源；
+      >
+      > pip换源：[Windows](https://blog.csdn.net/Artprog/article/details/75632723)，[MacOS](https://www.jianshu.com/p/f771e1120003)
+      >
+      > [npm换源](https://www.jianshu.com/p/f311a3a155ff)
 
 1. 后端开发：
 
@@ -65,13 +87,26 @@
      pip install networkx scipy sklearn
      ```
 
+     - networkx用于处理图数据
+     - scipy+networkx用于生成矩阵
+     - sklearn的PCA和TSNE等用于进行降维
+
 2. 前端开发：
 
-   - 搭建react项目：
+   - 助教已经给出一个react项目，你只要进入vis文件夹，运行以下命令就可以启动：
+
+     ```
+     npm i
+     npm start
+     ```
+
+     可以直接在给出的项目基础上进行阅读修改。
+
+   - 当然，想要学习如何搭建react的同学，可以进行以下的步骤搭建react项目：
 
      `npm init react-app vis`
 
-     等待数分钟后（会比较久），会在当前目录下创建一个名为`vis`的文件夹。
+     等待数分钟后（可能会比较久），会在当前目录下创建一个名为`vis`的文件夹。
 
      ![1561540375095](.\assets\1561540375095.png)
 
@@ -91,13 +126,13 @@
 
    - 安装必要的组件
 
+     ```
+     npm install --save-dev d3 antd axios
+     ```
+
      - d3
 
-       `npm install --save-dev d3`
-
      - ant design（可选，实用的框架，比如提供了按钮等组件，提供了布局）
-
-       `npm install --save-dev antd`
 
        安装完成后，修改 `src/App.css`，在文件顶部引入 `antd/dist/antd.css`。
 
@@ -117,43 +152,12 @@
 
        如果有前后端通讯，则可以实用axios用来通讯。
 
-   - 开始开发
 
 
-### 课程大作业要求（临时）
+### 关于答辩
 
-针对给定的数据，实现可视分析系统。能够完成以下目标：
+1. 现场答辩请展示你们小组的分工，务必每个人都有编程部分（不要某个人只负责答辩）
 
-1. 导入给定的数据
+2. 现场答辩时，需要你实时运行你重构的系统，展现系统所有的功能。
 
-2. 用多个可视化形式来呈现数据
-
-3. 加入必要的交互，用交互来发现数据中隐藏的模式（pattern）
-
-4. 形成一份完整的报告。包括：
-
-   1. 需求报告（针对这份数据，你们想出了哪些分析需求）
-   2. 系统整体和各个部分的设计（功能介绍等）
-   3. 一段介绍你们系统的视频
-   4. 最后得到的分析结果
-   5. 对自己系统的改进意见（假如给你充分的时间，你认为还能添加哪些可视化分析）
-
-
-
-
-### 评分规则
-
-最终，需要根据 编程实现（30%）、报告内容（40%）、现场答辩（30%）三块综合给分。
-
-#### 可视化与交互
-
-1. 方案合理：用合适的可视化图表、组件来展现对应的数据，不要误用错用；
-2. 设计美观：用合适的编码来设计可视化，不要错误使用编码，整体方案以服务数据分析为主；
-3. 交互丰富：让合理的交互（不要添加无意义的交互）能融入你的可视化展示中，如能使多个可视化视图（组件）进行交互联动更佳；
-
-#### 可视分析
-
-1. 提出的可视分析需求的有效性、多样性
-2. 制定的可视分析组件能够良好应对可视分析需求
-3. 最后得到的分析结果丰富、有趣（考验你的写作和演讲水平）
-4. 一些发散性思考（非必须）
+3. 对你们从数据中发现的insight进行解释；比如在哪里发现了什么规律？猜测为什么会出现这个规律？
