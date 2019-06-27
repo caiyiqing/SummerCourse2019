@@ -32,7 +32,11 @@
    >
    > 这是一个数组，数组的每个元素是一帧，一帧对应Demo左面的一个节点。这个节点的x，y坐标由vector给出，这个节点对应的图结构由graph给出。其中graph中的nodes和links最重要，分别表示图的节点，和节点之间的关联（source和target表示边连接的两个节点，weight表示边的权重）。
 
-2. 阅读[Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration](./Reducing Snapshots to Points A Visual Analytics Approach to Dynamic Network Exploration.pdf)（在本目录下有PDF）
+2. ## 北京大学可视化与可视分析博客
+
+   ]）
+
+3. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，北大和浙大的可视化小组都有相关的中文博客解释这篇论文：[北京大学可视化与可视分析博客](http://vis.pku.edu.cn/blog/%E5%B0%86%E6%AF%8F%E4%B8%AA%E6%97%B6%E9%97%B4%E6%AD%A5%E7%9A%84%E5%9B%BE%E9%99%8D%E7%BB%B4%E4%B8%BA%E7%82%B9%E5%8A%A8%E6%80%81%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8E%A2%E7%B4%A2/)，[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）
 
    理解其中的关于如何将【图】转化为【二维坐标】的算法部分，并实现该算法（推荐使用python），并接入到前端系统中（不需要实现3.6中图7 b的Phyllotactic arrangement techniques）(20分)
 
@@ -40,9 +44,9 @@
    >
    > 当然，你也可以放弃这部分的分数，选择我们提供的算法和生成好的数据，可以联系助教获取；
 
-3. 文章的数据集来源：[DATASET: High school dynamic contact networks](http://www.sociopatterns.org/datasets/high-school-dynamic-contact-networks/)，选择2012年的数据；或者直接使用这里提供的[thiers_20912.csv](./thiers_20912.csv)。
+4. 文章的数据集来源：[DATASET: High school dynamic contact networks](http://www.sociopatterns.org/datasets/high-school-dynamic-contact-networks/)，选择2012年的数据；或者直接使用这里提供的[thiers_20912.csv](./thiers_20912.csv)。
 
-4. 【Bonus1】当然可以用其他的数据集来代替该数据，推荐数据集（10分）：
+5. 【Bonus1】当然可以用其他的数据集来代替该数据，推荐数据集（10分）：
 
    - <http://konect.uni-koblenz.de/>
    - <http://networkrepository.com/>
@@ -50,9 +54,9 @@
 
    单纯替换数据并产生结果得5分，如果能从结果中分析出insight（答辩时进行讲解）再得5分。
 
-5. 【Bonus2】实现了其他附加的功能（比如系统其他两个面板，或者其他的交互手段）（10分）
+6. 【Bonus2】实现了其他附加的功能（比如系统其他两个面板，或者其他的交互手段）（10分）
 
-6. 最后一天（20日）上午，我们分组进行答辩
+7. 最后一天（20日）上午，我们分组进行答辩
 
 
 
@@ -108,21 +112,21 @@
 
      等待数分钟后（可能会比较久），会在当前目录下创建一个名为`vis`的文件夹。
 
-     ![1561540375095](.\assets\1561540375095.png)
+     ![1561540375095](./assets/1561540375095.png)
 
      `cd vis`
 
      进入文件夹后，会发现会有很多文件生成，其中`src`文件夹内存放了代码。
 
-     ![1561540407396](.\assets\1561540407396.png)
+     ![1561540407396](./assets/1561540407396.png)
 
      `npm start`
 
      启动项目，会在浏览器中自动打开项目，当你看到如下界面时，说明成功：
 
-     ![1561540528363](.\assets\1561540528363.png)
+     ![1561540528363](./assets/1561540528363.png)
 
-     ![1561540486764](.\assets\1561540486764.png)
+     ![1561540486764](./assets/1561540486764.png)
 
    - 安装必要的组件
 
