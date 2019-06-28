@@ -3,6 +3,8 @@
 ## 作业要求
 
 > 重要：作业分100分，但只占总成绩的70%，剩下的30%，出勤和态度占10%，现场答辩占20%
+>
+> 各位同学在上课前，可以看一下[作业指南](#作业指南)，做一下准备工作
 
 1. 实现Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration的可视化界面，实现下图中A B D部分，并完成如下功能（共80分）：
 
@@ -33,7 +35,7 @@
    > 这是一个数组，数组的每个元素是一帧，一帧对应Demo左面的一个节点。这个节点的x，y坐标由vector给出，这个节点对应的图结构由graph给出。其中graph中的nodes和links最重要，分别表示图的节点，和节点之间的关联（source和target表示边连接的两个节点，weight表示边的权重）。
 
 
-2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，北大和浙大的可视化小组都有相关的中文博客解释这篇论文：[北京大学可视化与可视分析博客](http://vis.pku.edu.cn/blog/%E5%B0%86%E6%AF%8F%E4%B8%AA%E6%97%B6%E9%97%B4%E6%AD%A5%E7%9A%84%E5%9B%BE%E9%99%8D%E7%BB%B4%E4%B8%BA%E7%82%B9%E5%8A%A8%E6%80%81%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8E%A2%E7%B4%A2/)，[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）
+2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，有相关的中文博客解释这篇论文：[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）
 
    理解其中的关于如何将【图】转化为【二维坐标】的算法部分，并实现该算法（推荐使用python），并接入到前端系统中（不需要实现3.6中图7 b的Phyllotactic arrangement techniques）(20分)
 
@@ -64,8 +66,8 @@
       - 编辑器：[Visual Studio Code](https://code.visualstudio.com/)（推荐，可以选择其他编辑器）
       - 浏览器：Chrome（推荐，可以选择其他浏览器）
       - 版本管理+协同合作工具：[Git](https://git-scm.com/downloads)+[Github](http://github.com)（推荐，但可以不用）
-      - [Node.js](https://nodejs.org/zh-cn/)，推荐安装
-      - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，不但会有内存问题，因为下载过慢，安装包已经在本项目内提供）
+      - [Node.js](https://nodejs.org/zh-cn/)，推荐安装（[Windows安装包](./installers/node-v10.16.0-x64.msi)）
+      - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，不但会有内存问题，因为下载过慢，[Windows安装包](./installers/python-3.7.3-amd64.exe)已经在本项目内提供）
 
       > Windows用户在安装好Nodejs和python后，不要忘记添加环境变量哦
       >
