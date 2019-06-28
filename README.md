@@ -24,6 +24,9 @@
    >
    > ```json
    > [{
+   >     "statistic": {
+   >         degree: count,
+   >     },
    >     "vector": [x, y],
    >     "graph": {
    >         "nodes": [{id}],
@@ -35,9 +38,18 @@
    > 这是一个数组，数组的每个元素是一帧，一帧对应Demo左面的一个节点。这个节点的x，y坐标由vector给出，这个节点对应的图结构由graph给出。其中graph中的nodes和links最重要，分别表示图的节点，和节点之间的关联（source和target表示边连接的两个节点，weight表示边的权重）。
 
 
-2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，有相关的中文博客解释这篇论文：[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）
+2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，有相关的中文博客解释这篇论文：[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）(20分)
 
-   理解其中的关于如何将【图】转化为【二维坐标】的算法部分，并实现该算法（推荐使用python），并接入到前端系统中（不需要实现3.6中图7 b的Phyllotactic arrangement techniques）(20分)
+   ![image-20190628142157534](./assets/image-20190628142157534.png)
+
+   下面是对算法的最基础的要求：
+
+   1. 读取数据源文件；
+   2. 按照0分钟-60分钟，6分钟-66分钟，…；每60分钟为一帧，前后两帧有54分钟的重叠这样的规律去构建动态图；每一帧应该包括所有的节点（180个）；
+   3. 利用networkx的算法，生成邻接矩阵（注意这些邻接矩阵应该是180\*180的）
+   4. 将邻接矩阵拼接成一个高维向量（180\*180=32400维），拼接方法如上图（2）
+   5. 用sklearn包里面的t-SNE算法，PCA算法对这些高维向量进行降维（每一个高维向量变成一个二维向量，希望各位简单去了解一下降维过程到底发生了什么？）
+   6. 将这些动态图、二维向量以及动态图每一帧的度数分布保存下来
 
    > 上面这个算法很简单，从文件读写，数据处理到算法生成和文件存储，大概只有150行不到的代码；推荐有能力的同学自己去尝试写一下这个算法，助教也可以提供相应的答疑；
    >
@@ -65,9 +77,10 @@
 
       - 编辑器：[Visual Studio Code](https://code.visualstudio.com/)（推荐，可以选择其他编辑器）
       - 浏览器：Chrome（推荐，可以选择其他浏览器）
-      - 版本管理+协同合作工具：[Git](https://git-scm.com/downloads)+[Github](http://github.com)（推荐，但可以不用）
+      - 版本管理+协同合作工具：[Git](https://git-scm.com/downloads)+[Github](http://github.com)（推荐，Git相关教程：[廖雪峰的Git教程](https://www.liaoxuefeng.com/wiki/896043488029600
+        )）
       - [Node.js](https://nodejs.org/zh-cn/)，推荐安装（[Windows安装包](./installers/node-v10.16.0-x64.msi)）
-      - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，不但会有内存问题，因为下载过慢，[Windows安装包](./installers/python-3.7.3-amd64.exe)已经在本项目内提供）
+      - [Python](https://www.python.org/downloads/)，推荐安装，版本3，64位（请安装64位版本的python，32位的安装包会有内存问题，因为下载过慢，[Windows安装包](./installers/python-3.7.3-amd64.exe)已经在本项目内提供）
 
       > Windows用户在安装好Nodejs和python后，不要忘记添加环境变量哦
       >
