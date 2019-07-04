@@ -1,5 +1,7 @@
 # 浙江大学2019年可视化暑期课程
 
+> 如果要在本地打开此文件，推荐使用typora打开；
+
 ## 作业要求
 
 > 重要：作业分100分，但只占总成绩的70%，剩下的30%，出勤和态度占10%，现场答辩占20%
@@ -38,7 +40,7 @@
    > 这是一个数组，数组的每个元素是一帧，一帧对应Demo左面的一个节点。这个节点的x，y坐标由vector给出，这个节点对应的图结构由graph给出。其中graph中的nodes和links最重要，分别表示图的节点，和节点之间的关联（source和target表示边连接的两个节点，weight表示边的权重）。
 
 
-2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration（在本目录下有PDF，有相关的中文博客解释这篇论文：[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）(20分)
+2. 阅读Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration，复现其中关于如何将动态图转化为二维平面坐标的算法（在本目录下有PDF，有相关的中文博客解释这篇论文：[浙江大学可视分析小组博客](http://www.cad.zju.edu.cn/home/vagblog/?p=3832)）(20分)
 
    ![image-20190628142157534](./assets/image-20190628142157534.png)
 
@@ -108,6 +110,8 @@
      - sklearn的PCA和TSNE等用于进行降维
 
 2. 前端开发：
+
+   - [Webstorm](https://www.jetbrains.com/webstorm/)：前端项目开发IDE，使用ZJU邮箱可以免费注册使用
 
    - 助教已经给出一个react项目，你只要进入vis文件夹，运行以下命令就可以启动：
 
