@@ -4,7 +4,8 @@
 
 > 我们建立了一个答疑微信群，希望各位能加入；
 
-![1562584621897](assets/1562584621897.png){:display="table" margin="0 auto"}
+<img src="./assets/1562584621897.png" style="display: table; margin: 0 auto;"></img>
+
 ## 作业要求
 
 > 重要：作业分100分，但只占总成绩的70%，剩下的30%，出勤和态度占10%，现场答辩占20%
